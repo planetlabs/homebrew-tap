@@ -5,21 +5,21 @@
 class GoStac < Formula
   desc "Utilities for working with Spatio-Temporal Asset Catalog (STAC) resources."
   homepage "https://github.com/planetlabs/go-stac"
-  version "0.20.0"
+  version "0.21.0"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/planetlabs/go-stac/releases/download/v0.20.0/go-stac_Darwin_arm64.tar.gz"
-      sha256 "779cc303b6841045f1f1f45f6d910a76d506d5677593a0cb23053ab39000bc3f"
+    if Hardware::CPU.intel?
+      url "https://github.com/planetlabs/go-stac/releases/download/v0.21.0/go-stac_Darwin_x86_64.tar.gz"
+      sha256 "f18fecdad8e20db1984c4786eb785e638afe9260e10a69cde92f38611832b647"
 
       def install
         bin.install "stac"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/planetlabs/go-stac/releases/download/v0.20.0/go-stac_Darwin_x86_64.tar.gz"
-      sha256 "dee2e6fcbb7d5fadcca7e1007e459d5702c53104d5698308273ef7095f6ccf3c"
+    if Hardware::CPU.arm?
+      url "https://github.com/planetlabs/go-stac/releases/download/v0.21.0/go-stac_Darwin_arm64.tar.gz"
+      sha256 "5d4bdd0c52138012ca0fc7b7b0cf44b6c8cb37b3aab6ce6689e2dfe66721dbf2"
 
       def install
         bin.install "stac"
@@ -29,16 +29,16 @@ class GoStac < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/planetlabs/go-stac/releases/download/v0.20.0/go-stac_Linux_arm64.tar.gz"
-      sha256 "765c53a860d1b17e601125b3ba4146bbb648c4f5e3262b9ce7b069b4f57fe1c5"
+      url "https://github.com/planetlabs/go-stac/releases/download/v0.21.0/go-stac_Linux_arm64.tar.gz"
+      sha256 "5dfde797aa4eaa4e2992bd2add9f74e7aba9cd80d15b30c011540aad481fa330"
 
       def install
         bin.install "stac"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/planetlabs/go-stac/releases/download/v0.20.0/go-stac_Linux_x86_64.tar.gz"
-      sha256 "22b463872ebdfc54f05dd522618eaa4850535c356d5f8a6f280377ef57f5a9fb"
+      url "https://github.com/planetlabs/go-stac/releases/download/v0.21.0/go-stac_Linux_x86_64.tar.gz"
+      sha256 "83f7fabba90d9721d289b3ede0d9529c39eb0d9d4348f0c5f6e06498635674ff"
 
       def install
         bin.install "stac"
