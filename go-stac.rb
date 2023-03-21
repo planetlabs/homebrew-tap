@@ -5,21 +5,21 @@
 class GoStac < Formula
   desc "Utilities for working with Spatio-Temporal Asset Catalog (STAC) resources."
   homepage "https://github.com/planetlabs/go-stac"
-  version "0.22.0"
+  version "0.23.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/planetlabs/go-stac/releases/download/v0.22.0/go-stac_Darwin_x86_64.tar.gz"
-      sha256 "4107f7c59f473dca2ea836b718ca79a96c120b5383f6daa9cb3ddc440960c3f9"
+      url "https://github.com/planetlabs/go-stac/releases/download/v0.23.0/go-stac_Darwin_x86_64.tar.gz"
+      sha256 "a0289fd8b7e2a554f136fd66eb5114320ae7739714f1cfd4910407f1b845ecc0"
 
       def install
         bin.install "stac"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/planetlabs/go-stac/releases/download/v0.22.0/go-stac_Darwin_arm64.tar.gz"
-      sha256 "479acde92e1d8263494592cef7734f370df7a480d0831b25c1682e6b25a570bc"
+      url "https://github.com/planetlabs/go-stac/releases/download/v0.23.0/go-stac_Darwin_arm64.tar.gz"
+      sha256 "2e7007571c4ae88b3cc1238b7500fd2bce398ddb554b634534072d2d597c7340"
 
       def install
         bin.install "stac"
@@ -29,16 +29,16 @@ class GoStac < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/planetlabs/go-stac/releases/download/v0.22.0/go-stac_Linux_x86_64.tar.gz"
-      sha256 "271acdcb1c1cc2cd0b8f2bf54ecc6cea0ea85f10978f2c7fe553e5a1b489f011"
+      url "https://github.com/planetlabs/go-stac/releases/download/v0.23.0/go-stac_Linux_x86_64.tar.gz"
+      sha256 "5b49c987afeb9c266a3de1c771704011d971f029739a35803cc31953eb8c1eb7"
 
       def install
         bin.install "stac"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/planetlabs/go-stac/releases/download/v0.22.0/go-stac_Linux_arm64.tar.gz"
-      sha256 "481df1281f31db1d2371e0179706466146fa14406b3f5b519562b496cbbc3379"
+      url "https://github.com/planetlabs/go-stac/releases/download/v0.23.0/go-stac_Linux_arm64.tar.gz"
+      sha256 "f81e44ad976b64748dbfe8410cf2dfca907547dd481b1ffcfb9c7702475c711f"
 
       def install
         bin.install "stac"
