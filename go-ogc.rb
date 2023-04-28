@@ -5,21 +5,21 @@
 class GoOgc < Formula
   desc "Generate OGC API - Tiles metadata from exiting XYZ tilesets."
   homepage "https://github.com/planetlabs/go-ogc"
-  version "0.8.1"
+  version "0.8.2"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/planetlabs/go-ogc/releases/download/v0.8.1/go-ogc_Darwin_x86_64.tar.gz"
-      sha256 "d8e7066a29a86ae6088b646e22116699d4269bdd1e0c9d89f48d72e3d2523f2c"
+      url "https://github.com/planetlabs/go-ogc/releases/download/v0.8.2/go-ogc_Darwin_x86_64.tar.gz"
+      sha256 "14377ea5241ecb0c32a84328a8fdc548ba4fc09bcbd8f7a05a29bab78f33ffb2"
 
       def install
         bin.install "xyz2ogc"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/planetlabs/go-ogc/releases/download/v0.8.1/go-ogc_Darwin_arm64.tar.gz"
-      sha256 "844f51291fe5b9fc9c0b6302c8fbc18c4d94ecec8eb24c9a3b002f278804241b"
+      url "https://github.com/planetlabs/go-ogc/releases/download/v0.8.2/go-ogc_Darwin_arm64.tar.gz"
+      sha256 "d041df2dcd94ab454d6dc592fafb1406cb293012d4c8b75bf55b80a492220ba7"
 
       def install
         bin.install "xyz2ogc"
@@ -29,16 +29,16 @@ class GoOgc < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/planetlabs/go-ogc/releases/download/v0.8.1/go-ogc_Linux_arm64.tar.gz"
-      sha256 "b151cd78c30f15c6ff60d6ae4a8e42206eed5b6b47967eb02c312b9b19caacf3"
+      url "https://github.com/planetlabs/go-ogc/releases/download/v0.8.2/go-ogc_Linux_arm64.tar.gz"
+      sha256 "303e1d259efc954e208b74dd49e51ae274bfd4670d78faf0c55c47ffb322c918"
 
       def install
         bin.install "xyz2ogc"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/planetlabs/go-ogc/releases/download/v0.8.1/go-ogc_Linux_x86_64.tar.gz"
-      sha256 "d62e8828ba490077179eecfec177d755ef8a4710c6fbaf0b3de36a68b160ac38"
+      url "https://github.com/planetlabs/go-ogc/releases/download/v0.8.2/go-ogc_Linux_x86_64.tar.gz"
+      sha256 "02379fac330a485bed54356149c0d43dd641f822cd2b25ffdc65cdc7c0c9f21a"
 
       def install
         bin.install "xyz2ogc"
