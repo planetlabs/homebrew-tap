@@ -5,21 +5,21 @@
 class GoOgc < Formula
   desc "Generate OGC API - Tiles metadata from exiting XYZ tilesets."
   homepage "https://github.com/planetlabs/go-ogc"
-  version "0.8.0"
+  version "0.8.1"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/planetlabs/go-ogc/releases/download/v0.8.0/go-ogc_Darwin_x86_64.tar.gz"
-      sha256 "6487e86fd1c37faa7dc53685103c51a442ebfd0072caf547f98d9a1205f379f8"
+      url "https://github.com/planetlabs/go-ogc/releases/download/v0.8.1/go-ogc_Darwin_x86_64.tar.gz"
+      sha256 "d8e7066a29a86ae6088b646e22116699d4269bdd1e0c9d89f48d72e3d2523f2c"
 
       def install
         bin.install "xyz2ogc"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/planetlabs/go-ogc/releases/download/v0.8.0/go-ogc_Darwin_arm64.tar.gz"
-      sha256 "57d1177afc32a523b35ebea17f698f13077f055e113f5b3c5d60f987befe31ec"
+      url "https://github.com/planetlabs/go-ogc/releases/download/v0.8.1/go-ogc_Darwin_arm64.tar.gz"
+      sha256 "844f51291fe5b9fc9c0b6302c8fbc18c4d94ecec8eb24c9a3b002f278804241b"
 
       def install
         bin.install "xyz2ogc"
@@ -28,17 +28,17 @@ class GoOgc < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/planetlabs/go-ogc/releases/download/v0.8.0/go-ogc_Linux_x86_64.tar.gz"
-      sha256 "aee5eda623caa581db632b17a6a3a95ef038eba7114ce5fc57382bb77023ef83"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/planetlabs/go-ogc/releases/download/v0.8.1/go-ogc_Linux_arm64.tar.gz"
+      sha256 "b151cd78c30f15c6ff60d6ae4a8e42206eed5b6b47967eb02c312b9b19caacf3"
 
       def install
         bin.install "xyz2ogc"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/planetlabs/go-ogc/releases/download/v0.8.0/go-ogc_Linux_arm64.tar.gz"
-      sha256 "0944b77f446740cc269f71623fd57556961ad50b074f5d260825ea1ddd117bc9"
+    if Hardware::CPU.intel?
+      url "https://github.com/planetlabs/go-ogc/releases/download/v0.8.1/go-ogc_Linux_x86_64.tar.gz"
+      sha256 "d62e8828ba490077179eecfec177d755ef8a4710c6fbaf0b3de36a68b160ac38"
 
       def install
         bin.install "xyz2ogc"
