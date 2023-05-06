@@ -5,21 +5,21 @@
 class Gpq < Formula
   desc "Utility for working with GeoParquet."
   homepage "https://github.com/planetlabs/gpq"
-  version "0.8.0"
+  version "0.9.0"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/planetlabs/gpq/releases/download/v0.8.0/gpq_Darwin_x86_64.tar.gz"
-      sha256 "2c32c26148db2275072abede88a41ee4593418330bf850ff80134eb17ced2703"
+    if Hardware::CPU.arm?
+      url "https://github.com/planetlabs/gpq/releases/download/v0.9.0/gpq-darwin-arm64.tar.gz"
+      sha256 "84cca46a6e5fd28f309f2925dd1e0b0dd0b7029a3b4b79ba10b4d7648f5ece82"
 
       def install
         bin.install "gpq"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/planetlabs/gpq/releases/download/v0.8.0/gpq_Darwin_arm64.tar.gz"
-      sha256 "5a1f10d2034462497bf7aaff83b65c6ca37a08db6f09498cbf73c08ff694476b"
+    if Hardware::CPU.intel?
+      url "https://github.com/planetlabs/gpq/releases/download/v0.9.0/gpq-darwin-amd64.tar.gz"
+      sha256 "c5058e30ed302f7ae69599a86eb9bd2585e49e1f18547775d3ec444276fb34fa"
 
       def install
         bin.install "gpq"
@@ -28,17 +28,17 @@ class Gpq < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/planetlabs/gpq/releases/download/v0.8.0/gpq_Linux_x86_64.tar.gz"
-      sha256 "a74f25a077c67f33381cbfc33c92542718dcb39f3f24ba2c86c54f2565b96408"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/planetlabs/gpq/releases/download/v0.9.0/gpq-linux-arm64.tar.gz"
+      sha256 "62895480595c3d1ea1712ea4b9ff5aeaf73169a76b224aaea0decb6a4e2359b5"
 
       def install
         bin.install "gpq"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/planetlabs/gpq/releases/download/v0.8.0/gpq_Linux_arm64.tar.gz"
-      sha256 "b92a707d4305ca5fceb93e2e93b27b8548e2b6ae159efed3f2f00bdbfb2d8a2e"
+    if Hardware::CPU.intel?
+      url "https://github.com/planetlabs/gpq/releases/download/v0.9.0/gpq-linux-amd64.tar.gz"
+      sha256 "133eacbb987f7446012076c682ef5d1f1bab7a36550626e30c4370f3c3e642e4"
 
       def install
         bin.install "gpq"
