@@ -5,21 +5,21 @@
 class Gpq < Formula
   desc "Utility for working with GeoParquet."
   homepage "https://github.com/planetlabs/gpq"
-  version "0.17.0"
+  version "0.18.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/planetlabs/gpq/releases/download/v0.17.0/gpq-darwin-amd64.tar.gz"
-      sha256 "996d6106c13cc40b015c3482ce173cb736a02386c32df781e97522c2983b983a"
+      url "https://github.com/planetlabs/gpq/releases/download/v0.18.0/gpq-darwin-amd64.tar.gz"
+      sha256 "36d33abdba8acf13594cbc63a6b877c01d64391af501289c960b2081b865dade"
 
       def install
         bin.install "gpq"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/planetlabs/gpq/releases/download/v0.17.0/gpq-darwin-arm64.tar.gz"
-      sha256 "3ae8a17cea752271cd07af9f270002f709bf1179b55edfef23d3a1c6850bce04"
+      url "https://github.com/planetlabs/gpq/releases/download/v0.18.0/gpq-darwin-arm64.tar.gz"
+      sha256 "bdd1c2dc75e70bb5a8c751c776b261959a88002c71616413be65421db4d8cadc"
 
       def install
         bin.install "gpq"
@@ -29,16 +29,16 @@ class Gpq < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/planetlabs/gpq/releases/download/v0.17.0/gpq-linux-arm64.tar.gz"
-      sha256 "1dd89e5eb1b02be73f00ffb30f8d01396807fa27b7c3eeb8eab61090eb584ec9"
+      url "https://github.com/planetlabs/gpq/releases/download/v0.18.0/gpq-linux-arm64.tar.gz"
+      sha256 "a1ae7b60ac80ed430731a59ea6ad9f20e7fab83b772e8c66f01f8428f87c7472"
 
       def install
         bin.install "gpq"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/planetlabs/gpq/releases/download/v0.17.0/gpq-linux-amd64.tar.gz"
-      sha256 "1bfb1dd1de6192673b8185517a70e7a49f13fc74574555d963decb4b3ba855e0"
+      url "https://github.com/planetlabs/gpq/releases/download/v0.18.0/gpq-linux-amd64.tar.gz"
+      sha256 "5b83be63e6199008bf830d212c653bfcdeeabb902daf3fb75a09ed521f56f698"
 
       def install
         bin.install "gpq"
@@ -47,6 +47,6 @@ class Gpq < Formula
   end
 
   test do
-    system "#{bin}/xyz2ogc version"
+    system "#{bin}/gpq version"
   end
 end
