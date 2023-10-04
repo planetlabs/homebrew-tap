@@ -5,21 +5,21 @@
 class Gpq < Formula
   desc "Utility for working with GeoParquet."
   homepage "https://github.com/planetlabs/gpq"
-  version "0.18.0"
+  version "0.19.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/planetlabs/gpq/releases/download/v0.18.0/gpq-darwin-amd64.tar.gz"
-      sha256 "36d33abdba8acf13594cbc63a6b877c01d64391af501289c960b2081b865dade"
+      url "https://github.com/planetlabs/gpq/releases/download/v0.19.0/gpq-darwin-amd64.tar.gz"
+      sha256 "65ab97a6fe5744a90bb52f662d31bd72280d0bc9dc087fdc7b5e205bb2c89bea"
 
       def install
         bin.install "gpq"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/planetlabs/gpq/releases/download/v0.18.0/gpq-darwin-arm64.tar.gz"
-      sha256 "bdd1c2dc75e70bb5a8c751c776b261959a88002c71616413be65421db4d8cadc"
+      url "https://github.com/planetlabs/gpq/releases/download/v0.19.0/gpq-darwin-arm64.tar.gz"
+      sha256 "bdc4ea7101c051953d8b758679d57728fa0bb9a430d0c4f736cf7a53ef73eac1"
 
       def install
         bin.install "gpq"
@@ -28,17 +28,17 @@ class Gpq < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/planetlabs/gpq/releases/download/v0.18.0/gpq-linux-arm64.tar.gz"
-      sha256 "a1ae7b60ac80ed430731a59ea6ad9f20e7fab83b772e8c66f01f8428f87c7472"
+    if Hardware::CPU.intel?
+      url "https://github.com/planetlabs/gpq/releases/download/v0.19.0/gpq-linux-amd64.tar.gz"
+      sha256 "8a6d99fdfee4ecf447b114f717ae0fce405aef04176a7a1538f74adb8baa40d8"
 
       def install
         bin.install "gpq"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/planetlabs/gpq/releases/download/v0.18.0/gpq-linux-amd64.tar.gz"
-      sha256 "5b83be63e6199008bf830d212c653bfcdeeabb902daf3fb75a09ed521f56f698"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/planetlabs/gpq/releases/download/v0.19.0/gpq-linux-arm64.tar.gz"
+      sha256 "aed80f0012ae3a65c5ea2cf5d203c06db95e3c86d50a6aa3f3139e0b7edd1b97"
 
       def install
         bin.install "gpq"
