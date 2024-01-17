@@ -5,21 +5,21 @@
 class Gpq < Formula
   desc "Utility for working with GeoParquet."
   homepage "https://github.com/planetlabs/gpq"
-  version "0.21.0"
+  version "0.22.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/planetlabs/gpq/releases/download/v0.21.0/gpq-darwin-amd64.tar.gz"
-      sha256 "c984a3845a61af1a9096e8e1f1d5bdd0b0ee70dd1158b5e8bf7f97fdc99d6746"
+      url "https://github.com/planetlabs/gpq/releases/download/v0.22.0/gpq-darwin-amd64.tar.gz"
+      sha256 "9b7add3d31fd5159499ec5a410ea27dc1743e0f9befb9adc49d0fb7a0e92b3a6"
 
       def install
         bin.install "gpq"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/planetlabs/gpq/releases/download/v0.21.0/gpq-darwin-arm64.tar.gz"
-      sha256 "f2b428ae25c78a99b9f54ef89a648cfdf39b78dcf170e2b182991a32668d242e"
+      url "https://github.com/planetlabs/gpq/releases/download/v0.22.0/gpq-darwin-arm64.tar.gz"
+      sha256 "08a451d7e4fd3afccbfc73903cdfc2f22ed7ca8130b32d1bbf220d8c82d9f107"
 
       def install
         bin.install "gpq"
@@ -29,16 +29,16 @@ class Gpq < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/planetlabs/gpq/releases/download/v0.21.0/gpq-linux-arm64.tar.gz"
-      sha256 "7c13f7d4ea95f4b2dbd6a790340490ca2ba6b89422ac2f30d600b62d5f6d35fe"
+      url "https://github.com/planetlabs/gpq/releases/download/v0.22.0/gpq-linux-arm64.tar.gz"
+      sha256 "75fade8e1c79223d777dca7aeb36b3fae1c4991fe3b62daa344215e91a1ab74b"
 
       def install
         bin.install "gpq"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/planetlabs/gpq/releases/download/v0.21.0/gpq-linux-amd64.tar.gz"
-      sha256 "04ee35a32003b15177e33ef9a71f82fad7ce6b6b421648cae9477f18c9b68b24"
+      url "https://github.com/planetlabs/gpq/releases/download/v0.22.0/gpq-linux-amd64.tar.gz"
+      sha256 "6f25f8d566baa71f5d0bc45011f58854bfc658c29a178e42e8f02a2ca2bc1dec"
 
       def install
         bin.install "gpq"
