@@ -5,21 +5,21 @@
 class GoOgc < Formula
   desc "Generate OGC API - Tiles metadata from exiting XYZ tilesets."
   homepage "https://github.com/planetlabs/go-ogc"
-  version "0.10.0"
+  version "0.11.0"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/planetlabs/go-ogc/releases/download/v0.10.0/go-ogc-darwin-amd64.tar.gz"
-      sha256 "d67dd12c399dfa77b53f4445e40480a421aca989b3f5f82edd1094eb76e18f9f"
+    on_intel do
+      url "https://github.com/planetlabs/go-ogc/releases/download/v0.11.0/go-ogc-darwin-amd64.tar.gz"
+      sha256 "2c36964c0acf1b424aa5f9be0d48dc496bb0412968fe3704523231516ad42f64"
 
       def install
         bin.install "xyz2ogc"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/planetlabs/go-ogc/releases/download/v0.10.0/go-ogc-darwin-arm64.tar.gz"
-      sha256 "1e4fea5f189b13d587cde2488e036ff6f36a232f530d003e367b79a1a002209e"
+    on_arm do
+      url "https://github.com/planetlabs/go-ogc/releases/download/v0.11.0/go-ogc-darwin-arm64.tar.gz"
+      sha256 "a7d54637dce5b70f72b55c1de3c79ce23b84899135aa7dfb2594c1fbe3b3e213"
 
       def install
         bin.install "xyz2ogc"
@@ -28,20 +28,24 @@ class GoOgc < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/planetlabs/go-ogc/releases/download/v0.10.0/go-ogc-linux-amd64.tar.gz"
-      sha256 "e4bfb9bf162c71414e6555df1f17f8d3f6e7b40df7a5aecd6d74519f8a3cf7a6"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/planetlabs/go-ogc/releases/download/v0.11.0/go-ogc-linux-amd64.tar.gz"
+        sha256 "075664edbe0e54f4631be2703019d3290e2982ebfbec0e5d2ca2f348cdc98c20"
 
-      def install
-        bin.install "xyz2ogc"
+        def install
+          bin.install "xyz2ogc"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/planetlabs/go-ogc/releases/download/v0.10.0/go-ogc-linux-arm64.tar.gz"
-      sha256 "269cc88ca1366bcd14c6cc79d74cd9e30f37e8c7d52b3d1945d37bacfaaf0243"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/planetlabs/go-ogc/releases/download/v0.11.0/go-ogc-linux-arm64.tar.gz"
+        sha256 "9a9737e82f32cd801d5dd82a2dace308b7faf173fae25959f4ce342b18779470"
 
-      def install
-        bin.install "xyz2ogc"
+        def install
+          bin.install "xyz2ogc"
+        end
       end
     end
   end
