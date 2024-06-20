@@ -5,21 +5,21 @@
 class Gpq < Formula
   desc "Utility for working with GeoParquet."
   homepage "https://github.com/planetlabs/gpq"
-  version "0.22.0"
+  version "0.23.0"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/planetlabs/gpq/releases/download/v0.22.0/gpq-darwin-amd64.tar.gz"
-      sha256 "9b7add3d31fd5159499ec5a410ea27dc1743e0f9befb9adc49d0fb7a0e92b3a6"
+    on_intel do
+      url "https://github.com/planetlabs/gpq/releases/download/v0.23.0/gpq-darwin-amd64.tar.gz"
+      sha256 "558845a97f60ed8757f5bf6a9f7a00495ec15683e05824eb3e9ee8ad63b35f2d"
 
       def install
         bin.install "gpq"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/planetlabs/gpq/releases/download/v0.22.0/gpq-darwin-arm64.tar.gz"
-      sha256 "08a451d7e4fd3afccbfc73903cdfc2f22ed7ca8130b32d1bbf220d8c82d9f107"
+    on_arm do
+      url "https://github.com/planetlabs/gpq/releases/download/v0.23.0/gpq-darwin-arm64.tar.gz"
+      sha256 "ee9cba953383acbb9ace4f66156f90e8848d4fb51a6173731011e2c21d50a5f4"
 
       def install
         bin.install "gpq"
@@ -28,20 +28,24 @@ class Gpq < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/planetlabs/gpq/releases/download/v0.22.0/gpq-linux-arm64.tar.gz"
-      sha256 "75fade8e1c79223d777dca7aeb36b3fae1c4991fe3b62daa344215e91a1ab74b"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/planetlabs/gpq/releases/download/v0.23.0/gpq-linux-amd64.tar.gz"
+        sha256 "14fb9e99ea96609d39381e16a08b69bdad08a10bcc685d50fc6e9f5ad64d2d85"
 
-      def install
-        bin.install "gpq"
+        def install
+          bin.install "gpq"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/planetlabs/gpq/releases/download/v0.22.0/gpq-linux-amd64.tar.gz"
-      sha256 "6f25f8d566baa71f5d0bc45011f58854bfc658c29a178e42e8f02a2ca2bc1dec"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/planetlabs/gpq/releases/download/v0.23.0/gpq-linux-arm64.tar.gz"
+        sha256 "77995b68588a7c861d9b358b74d901ccd4bbf2ee9fbcc9b6ac1d2c9ef41c0f0e"
 
-      def install
-        bin.install "gpq"
+        def install
+          bin.install "gpq"
+        end
       end
     end
   end
