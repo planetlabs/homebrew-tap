@@ -5,21 +5,21 @@
 class GoOgc < Formula
   desc "Generate OGC API - Tiles metadata from exiting XYZ tilesets."
   homepage "https://github.com/planetlabs/go-ogc"
-  version "0.11.0"
+  version "0.12.0"
   license "Apache-2.0"
 
   on_macos do
     on_intel do
-      url "https://github.com/planetlabs/go-ogc/releases/download/v0.11.0/go-ogc-darwin-amd64.tar.gz"
-      sha256 "2c36964c0acf1b424aa5f9be0d48dc496bb0412968fe3704523231516ad42f64"
+      url "https://github.com/planetlabs/go-ogc/releases/download/v0.12.0/go-ogc-darwin-amd64.tar.gz"
+      sha256 "f4c4eeca611d35644cb35026d8aee5ee57791b17b47dea2b3e77e2bef1521011"
 
       def install
         bin.install "xyz2ogc"
       end
     end
     on_arm do
-      url "https://github.com/planetlabs/go-ogc/releases/download/v0.11.0/go-ogc-darwin-arm64.tar.gz"
-      sha256 "a7d54637dce5b70f72b55c1de3c79ce23b84899135aa7dfb2594c1fbe3b3e213"
+      url "https://github.com/planetlabs/go-ogc/releases/download/v0.12.0/go-ogc-darwin-arm64.tar.gz"
+      sha256 "3398fff274860e0aa61a6c206a0f8c845a5413c1aaf622793acb950a54bea6ab"
 
       def install
         bin.install "xyz2ogc"
@@ -30,8 +30,8 @@ class GoOgc < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/planetlabs/go-ogc/releases/download/v0.11.0/go-ogc-linux-amd64.tar.gz"
-        sha256 "075664edbe0e54f4631be2703019d3290e2982ebfbec0e5d2ca2f348cdc98c20"
+        url "https://github.com/planetlabs/go-ogc/releases/download/v0.12.0/go-ogc-linux-amd64.tar.gz"
+        sha256 "b4a77e55b2f665cf6525af505460ad686ce623af6648f274bf1108393bede46d"
 
         def install
           bin.install "xyz2ogc"
@@ -40,8 +40,8 @@ class GoOgc < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/planetlabs/go-ogc/releases/download/v0.11.0/go-ogc-linux-arm64.tar.gz"
-        sha256 "9a9737e82f32cd801d5dd82a2dace308b7faf173fae25959f4ce342b18779470"
+        url "https://github.com/planetlabs/go-ogc/releases/download/v0.12.0/go-ogc-linux-arm64.tar.gz"
+        sha256 "dfb3c61b8bb17525f90491c1b75c9aba30e629a594efc30bc87fa5c8f28d18c0"
 
         def install
           bin.install "xyz2ogc"
