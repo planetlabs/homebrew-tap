@@ -5,40 +5,40 @@
 class GoStac < Formula
   desc "Utilities for working with Spatio-Temporal Asset Catalog (STAC) resources."
   homepage "https://github.com/planetlabs/go-stac"
-  version "0.34.0"
+  version "0.35.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/planetlabs/go-stac/releases/download/v0.34.0/go-stac-darwin-amd64.tar.gz"
-      sha256 "1d05f92aad0fe780c7cc7e2c53f613018806fc5ddb38536ba9fe5a512fe8426d"
+      url "https://github.com/planetlabs/go-stac/releases/download/v0.35.0/go-stac-darwin-amd64.tar.gz"
+      sha256 "fe2a09cdb45ddb8691b029168e71c33e18d09c16998efcde9e20f8f595b95679"
 
-      def install
+      define_method(:install) do
         bin.install "stac"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/planetlabs/go-stac/releases/download/v0.34.0/go-stac-darwin-arm64.tar.gz"
-      sha256 "ca872a0e2342c0d0ffe0ac1d20ff3e9e9dbcbbcd297aec7f9f6ca3ee78086796"
+      url "https://github.com/planetlabs/go-stac/releases/download/v0.35.0/go-stac-darwin-arm64.tar.gz"
+      sha256 "17ac0445998f12c59bb039b1e2d49cfb83b97ccba53073a2ddbd36da60eb0d22"
 
-      def install
+      define_method(:install) do
         bin.install "stac"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/planetlabs/go-stac/releases/download/v0.34.0/go-stac-linux-amd64.tar.gz"
-      sha256 "8b71c07740e1e0730e577846ceb16589d0e98e05f5f29f586e67029076d3438a"
-      def install
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/planetlabs/go-stac/releases/download/v0.35.0/go-stac-linux-amd64.tar.gz"
+      sha256 "06181717788a3e8b5f5fdec96715c26ab1a37b9ca635339339d22fed96b65b5a"
+      define_method(:install) do
         bin.install "stac"
       end
     end
-    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/planetlabs/go-stac/releases/download/v0.34.0/go-stac-linux-arm64.tar.gz"
-      sha256 "8b005ce1233e17dc2094d5adc90fdc7c9388fd162dd34ab7b8d7310cf16259e5"
-      def install
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/planetlabs/go-stac/releases/download/v0.35.0/go-stac-linux-arm64.tar.gz"
+      sha256 "9dffbdad411bbbae7bf5e656ed1950b1d28a11bee903d84c6035d5d7d9384877"
+      define_method(:install) do
         bin.install "stac"
       end
     end
